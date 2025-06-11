@@ -1,0 +1,23 @@
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.number {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.custom_checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #2563eb;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

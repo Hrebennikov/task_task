@@ -1,0 +1,18 @@
+.btn_action {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+
+  &.active {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #1d28ff;
+    transition: background-color 0.2s ease;
+  }
+
+  &.disabled {
+    background-color: #b5b8ff;
+    color: #000000;
+    cursor: not-allowed;
+  }
+}

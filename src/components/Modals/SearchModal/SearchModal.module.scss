@@ -1,0 +1,71 @@
+.search_modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+
+  .modal_box {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 28rem;
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .field_group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      label {
+        display: block;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        border: 1px solid #d1d5db;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .modal_actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+
+      .btn_reset {
+        padding: 0.5rem 1rem;
+        background-color: #b5b8ff;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border: none;
+      }
+
+      .btn_apply {
+        padding: 0.5rem 1rem;
+        background-color: #2563eb;
+        color: #fff;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border: none;
+      }
+    }
+  }
+}
