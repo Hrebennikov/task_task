@@ -36,3 +36,13 @@
   color: #999;
   user-select: none;
 }
+
+.prevAndNextBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

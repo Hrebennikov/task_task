@@ -36,9 +36,20 @@ export const useTableStore = create<State>((set, get) => ({
     });
   },
   addQuote: (q) => {
-    set((state) => ({
-      quotes: [...state.quotes, { ...q, id: Date.now().toString() }],
-    }));
+    set((state) => {
+      // Визначаємо максимальний числовий id серед існуючих quotes
+      const maxId =
+        state.quotes.length > 0
+          ? Math.max(...state.quotes.map((quote) => Number(quote.id)))
+          : 0;
+
+      // Генеруємо новий id як maxId + 1
+      const newId = (maxId + 1).toString();
+
+      return {
+        quotes: [...state.quotes, { ...q, id: newId }],
+      };
+    });
   },
   updateQuote: (updated) =>
     set((state) => ({

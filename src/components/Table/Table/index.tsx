@@ -6,7 +6,7 @@ import Pagination from "../Pagination";
 import { Quote } from "../../../types";
 import styles from "./Table.module.scss";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 export default function Table() {
   const quotes = useTableStore((s) => s.quotes);
@@ -24,6 +24,10 @@ export default function Table() {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentData = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
+  const subTotal = currentData.reduce((acc, item) => {
+    return acc + item.total;
+  }, 0);
+
   return (
     <div className={styles.container}>
       <table className={styles.table_block}>
@@ -39,6 +43,11 @@ export default function Table() {
           )}
         </tbody>
       </table>
+
+      <div className={styles.subTotal}>
+        <p>Page Sub Total:</p>
+        <span>{subTotal} $</span>
+      </div>
 
       <Pagination
         currentPage={currentPage}

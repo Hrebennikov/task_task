@@ -5,13 +5,7 @@ export type Quote = {
   customer: string;
   siteDelivery: string;
   noQuotes: string;
-  subTotal: string;
-  vat: string;
-  total: string;
-  deposit: string;
-  qutstanding: string;
-  profit: string;
+  total: number;
   email: string;
   description: string;
-  amount: number;
 };

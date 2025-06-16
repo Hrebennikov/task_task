@@ -32,7 +32,9 @@ export default function SearchModal({ onClose }: Props) {
     <div className={styles.search_modal}>
       <div className={styles.modal_box}>
         <h2>Search Filters</h2>
-
+        <button onClick={onClose} aria-label="Close">
+          &times;
+        </button>
         <div className={styles.field_group}>
           <div>
             <label>Quote</label>

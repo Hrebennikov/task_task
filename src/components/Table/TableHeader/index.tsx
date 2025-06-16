@@ -33,15 +33,9 @@ export default function TableHeader() {
         <th>Customer</th>
         <th>Site/Delivery</th>
         <th>No. Quotes</th>
-        <th>Sub Total</th>
-        <th>VAT</th>
         <th>Total</th>
-        <th>Deposit</th>
-        <th>Outstanding</th>
-        <th>Profit</th>
         <th>Email</th>
         <th>Description</th>
-        <th>Amount</th>
       </tr>
     </thead>
   );

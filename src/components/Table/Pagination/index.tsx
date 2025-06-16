@@ -50,6 +50,13 @@ export default function Pagination({
 
   return (
     <div className={styles.container}>
+      <button
+        className={styles.prevAndNextBtn}
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage - 1)}
+      >
+        {"<"}
+      </button>
       {pageNumbers.map((page, index) =>
         page === "..." ? (
           <span key={`dots-${index}`} className={styles.dots}>
@@ -67,6 +74,13 @@ export default function Pagination({
           </button>
         )
       )}
+      <button
+        className={styles.prevAndNextBtn}
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage + 1)}
+      >
+        {">"}
+      </button>
     </div>
   );
 }

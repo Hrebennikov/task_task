@@ -21,15 +21,9 @@ export default function AddEditModal({ onClose, initialData }: Props) {
           customer: initialData.customer,
           siteDelivery: initialData.siteDelivery,
           noQuotes: initialData.noQuotes,
-          subTotal: initialData.subTotal,
-          vat: initialData.vat,
-          total: initialData.total,
-          deposit: initialData.deposit,
-          qutstanding: initialData.qutstanding,
-          profit: initialData.profit,
           email: initialData.email,
           description: initialData.description,
-          amount: initialData.amount,
+          total: initialData.total,
         }
       : {
           quoteNo: "",
@@ -37,15 +31,9 @@ export default function AddEditModal({ onClose, initialData }: Props) {
           customer: "",
           siteDelivery: "",
           noQuotes: "",
-          subTotal: "",
-          vat: "",
-          total: "",
-          deposit: "",
-          qutstanding: "",
-          profit: "",
           email: "",
           description: "",
-          amount: 0,
+          total: 0,
         }
   );
 
@@ -62,7 +50,7 @@ export default function AddEditModal({ onClose, initialData }: Props) {
       alert("Customer name is required.");
       return false;
     }
-    if (form.amount <= 0) {
+    if (form.total <= 0) {
       alert("Amount must be greater than 0.");
       return false;
     }
@@ -89,6 +77,7 @@ export default function AddEditModal({ onClose, initialData }: Props) {
         </h2>
 
         <div className={styles.modal_form}>
+          <label>Quote</label>
           <input
             type="text"
             placeholder="Quote"
@@ -96,98 +85,81 @@ export default function AddEditModal({ onClose, initialData }: Props) {
             onChange={(e) => setForm({ ...form, quoteNo: e.target.value })}
             className={styles.modal_input}
           />
-          <input
-            type="date"
-            value={form.date}
-            onChange={(e) => setForm({ ...form, date: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="text"
-            placeholder="Customer"
-            value={form.customer}
-            onChange={(e) => setForm({ ...form, customer: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="text"
-            placeholder="Site/Delivery"
-            value={form.siteDelivery}
-            onChange={(e) => setForm({ ...form, siteDelivery: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="No. Quotes"
-            value={form.noQuotes}
-            onChange={(e) => setForm({ ...form, noQuotes: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Sub Total"
-            value={form.subTotal}
-            onChange={(e) => setForm({ ...form, subTotal: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="VAT"
-            value={form.vat}
-            onChange={(e) => setForm({ ...form, vat: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Total"
-            value={form.total}
-            onChange={(e) => setForm({ ...form, total: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Deposit"
-            value={form.deposit}
-            onChange={(e) => setForm({ ...form, deposit: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Outstanding"
-            value={form.qutstanding}
-            onChange={(e) => setForm({ ...form, qutstanding: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Profit"
-            value={form.profit}
-            onChange={(e) => setForm({ ...form, profit: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            value={form.description}
-            onChange={(e) => setForm({ ...form, description: e.target.value })}
-            className={styles.modal_input}
-          />
-          <input
-            type="number"
-            placeholder="Amount"
-            value={form.amount}
-            onChange={(e) =>
-              setForm({ ...form, amount: Number(e.target.value) })
-            }
-            className={styles.modal_input}
-          />
+          <label>
+            Date
+            <input
+              type="date"
+              value={form.date}
+              onChange={(e) => setForm({ ...form, date: e.target.value })}
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            Customer
+            <input
+              type="text"
+              placeholder="Customer"
+              value={form.customer}
+              onChange={(e) => setForm({ ...form, customer: e.target.value })}
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            Site/Delivery
+            <input
+              type="text"
+              placeholder="Site/Delivery"
+              value={form.siteDelivery}
+              onChange={(e) =>
+                setForm({ ...form, siteDelivery: e.target.value })
+              }
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            No. Quotes
+            <input
+              type="number"
+              placeholder="No. Quotes"
+              value={form.noQuotes}
+              onChange={(e) => setForm({ ...form, noQuotes: e.target.value })}
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            Total
+            <input
+              type="number"
+              placeholder="Total"
+              value={form.total}
+              onChange={(e) =>
+                setForm({ ...form, total: Number(e.target.value) })
+              }
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className={styles.modal_input}
+            />
+          </label>
+          <label>
+            Description
+            <input
+              type="text"
+              placeholder="Description"
+              value={form.description}
+              onChange={(e) =>
+                setForm({ ...form, description: e.target.value })
+              }
+              className={styles.modal_input}
+            />
+          </label>
         </div>
 
         <div className={styles.modal_footer}>

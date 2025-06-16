@@ -34,15 +34,9 @@ export default function TableRow({ quote }: Props) {
         <td className={styles.title}>{quote.customer}</td>
         <td className={styles.title}>{quote.siteDelivery}</td>
         <td className={styles.title}>{quote.noQuotes}</td>
-        <td className={styles.title}>{quote.subTotal}</td>
-        <td className={styles.title}>{quote.vat}</td>
-        <td className={styles.title}>{quote.total}</td>
-        <td className={styles.title}>{quote.deposit}</td>
-        <td className={styles.title}>{quote.qutstanding}</td>
-        <td className={styles.title}>{quote.profit}</td>
+        <td className={styles.title}>{quote.total}$</td>
         <td className={styles.title}>{quote.email}</td>
         <td className={styles.title}>{quote.description}</td>
-        <td className={styles.title}>${quote.amount}</td>
         <td className={styles.title}>
           <svg
             onClick={() => setEditOpen(true)}
