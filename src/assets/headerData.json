@@ -1,0 +1,48 @@
+[
+    {
+        "id": 0,
+        "imgUrl": "../../../public/icons/mingcute.svg",
+        "title": "Leads"
+    },
+    {
+        "id": 1,
+        "imgUrl": "../../../public/icons/Quotes.svg",
+        "title": "Quotes"
+    },
+    {
+        "id": 2,
+        "imgUrl": "../../../public/icons/Jobs.svg",
+        "title": "Jobs"
+    },
+    {
+        "id": 3,
+        "imgUrl": "../../../public/icons/Planner.svg",
+        "title": "Planner"
+    },
+    {
+        "id": 4,
+        "imgUrl": "../../../public/icons/Chat.svg",
+        "title": "Chat"
+    },
+    {
+        "id": 5,
+        "imgUrl": "../../../public/icons/Finance.svg",
+        "title": "Finance"
+    },
+    {
+        "id": 6,
+        "imgUrl": "../../../public/icons/Contacts.svg",
+        "title": "Contacts"
+    },
+    {
+        "id": 7,
+        "imgUrl": "../../../public/icons/Expenses.svg",
+        "title": "Expenses"
+    },
+    {
+        "id": 8,
+        "imgUrl": "../../../public/icons/User.svg",
+        "title": "User"
+    }
+]
+
